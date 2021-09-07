@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import ApplicationForm from '../ApplicationForm/ApplicationForm'
+import ApplicationForm from '../../components/ApplicationForm/ApplicationForm'
 import './styles.css'
 import builtImg from '../../assets/built.svg'
 
@@ -13,7 +13,6 @@ export default class LoanApplication extends Component {
                     <img src={builtImg} alt="built logo" />
                     <h3>Construction Loan Application</h3>
                     <ApplicationForm />
-                    <button>Submit</button>
                 </div>
             </div>
         )

@@ -56,10 +56,12 @@
     "@types/systemjs": "^6.1.1",
     "@types/webpack-env": "^1.16.2",
     "babel-plugin-react-css-modules": "^5.2.6",
+    "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "single-spa": "^5.9.3",
-    "single-spa-react": "^4.3.1"
+    "single-spa-react": "^4.3.1",
+    "yup": "^0.32.9"
   },
   "types": "dist/richter-loan-application.d.ts"
 }
