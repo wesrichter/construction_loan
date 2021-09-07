@@ -10,7 +10,7 @@
         *	validate user input via custom npm package ( # 2 below)
         *	A submit button to send user to success landing page ✅
     *	MiniApp 2 - Success Landing Page -
-        *	A landing page with a success message saying “Congrats {{first name here}}, you submitted the form successfully”
+        *	A landing page with a success message saying “Congrats {{first name here}}, you submitted the form successfully” ✅
         *	Both MiniApps should be created using single-spa-react ✅
         *	styling is left up to what you’d like to incorporate (3rd party libraries ok) ✅
 2.  Create and publish a public npm package which exposes functions to validate user input to a form.

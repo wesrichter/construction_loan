@@ -23,7 +23,33 @@ const ApplicationSchema = Yup.object().shape({
       .length(10, 'Invalid 10 digit phone number')
   });
 
-const ApplicationForm = () => (
+const ApplicationForm = () => {
+    const fields = [
+        {id: "firstName", name: "firstName", placeHolder: "First Name"},
+        {id: "lastName", name: "lastName", placeHolder: "Last Name"},
+        {id: "email", name: "email", placeHolder: "Email"},
+        {id: "phone", name: "phone", placeHolder: "Phone"}
+    ]
+
+    const selects = [
+        {id: "zoning", 
+         name: "zoning", 
+         options: [
+             {value: "residential", display: "Residential"},
+             {value: "commercial", display: "Commercial"}
+        ]},
+        {id: "loanType", 
+         name: "loanType", 
+         options: [
+            {value: "permanent", display: "Construction-To-Permanent"},
+            {value: "construction", display: "Construction-Only"},
+            {value: "renovation", display: "Renovation"},
+            {value: "ownerBuilder", display: "Owner-Builder"},
+            {value: "end", display: "End"},
+        ]},
+    ]
+
+    return (
     <Formik
         validationSchema={ApplicationSchema}
         initialValues={{
@@ -42,61 +68,35 @@ const ApplicationForm = () => (
     }}
     >
         <Form>
-            <div className="fieldInput">
-                <Field
-                    id="firstName" 
-                    name="firstName" 
-                    placeholder="First Name" 
-                />
-                <ErrorMessage name="firstName">{msg => <div>{msg}</div>}</ErrorMessage>
-            </div>
+            {
+                fields.map(field => {
+                    return (
+                        <div className="fieldInput">
+                        <Field
+                            id={field.id} 
+                            name={field.name}
+                            placeholder={field.placeHolder} 
+                        />
+                        <ErrorMessage name={field.name}>{msg => <div>{msg}</div>}</ErrorMessage>
+                    </div>
+                    )
+                })
+            }
 
-            <div className="fieldInput">
-                <Field
-                    id="lastName" 
-                    name="lastName" 
-                    placeholder="Last Name" 
-                />
-                <ErrorMessage name="lastName">{msg => <div>{msg}</div>}</ErrorMessage>
-            </div>
-
-            <div className="fieldInput">
-                <Field
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                    type="email"
-                />
-                <ErrorMessage name="email">{msg => <div>{msg}</div>}</ErrorMessage>
-            </div>
-
-            <div className="fieldInput">
-                <Field
-                    id="phone"
-                    name="phone"
-                    placeholder="Phone"
-                    type="text"
-                />
-                <ErrorMessage name="phone">{msg => <div>{msg}</div>}</ErrorMessage>
-            </div>
-
-            <Field as="select" name="zoning">
-                <option value="residential">Residential</option>
-                <option value="commercial">Commercial</option>
-            </Field>
-
-            <Field as="select" name="loanType">
-                <option value="residential">Construction-To-Permanent</option>
-                <option value="construction">Construction-Only</option>
-                <option value="renovation">Renovation</option>
-                <option value="ownerBuilder">Owner-Builder</option>
-                <option value="end">End</option>
-            </Field>
+            {
+                selects.map(select => {
+                    return (
+                        <Field as="select" name={select.name}>
+                           {select.options.map(drop => <option value={drop.value}>{drop.display}</option>)}
+                        </Field>
+                    )
+                })
+            }
 
             <button type="submit">Submit</button>
         </Form>
     </Formik>
-);
+)};
 
 
 
