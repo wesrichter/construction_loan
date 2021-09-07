@@ -35,6 +35,8 @@ body {
     margin: 1em 0 .2em 0;
     color: var(--main-color);
     font-size: 1.2em;
+    display: block;
+    text-align: center;
 }
 
 .mainContainer a {
