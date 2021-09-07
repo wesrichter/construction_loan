@@ -1,3 +1,5 @@
+`yarn add global lerna`
+
 1. Create a micro-frontend architecture using the single-spa-js library with the following criteria:
     *   Root-Config - container which orchestrates a micro-frontend (mfe) / miniapp. ✅
     *	MiniApp1 should be at route “/loan-application” ✅

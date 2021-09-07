@@ -33,6 +33,8 @@ const ApplicationForm = () => (
             phone: ''
         }}
         onSubmit={(values: Values, { setSubmitting }: FormikHelpers<Values>) => {
+            localStorage.setItem("formFirstName", values.firstName);
+            window.location.replace('/success')
             setTimeout(() => {
                 alert(JSON.stringify(values, null, 2));
                 setSubmitting(false);

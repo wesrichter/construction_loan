@@ -41,8 +41,10 @@ body {
 }
 
 .loanContainer h3 {
-    margin: 2em 0 .2em 0;
+    margin: 2em 0 .8em 0;
     color: var(--main-color);
+    font-size: 1.3em;
+    text-align: center;
 }
 
 .loanContainer img {
@@ -76,7 +78,7 @@ body {
 
 .loanContainer select {
  text-align: center;
- margin: 1.5em .5em;
+ margin: 1.5em .8em;
  width: 12em;
  cursor: pointer;
  background: none;
