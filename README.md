@@ -20,6 +20,6 @@
         *	text only
         *	numbers only
     *	npm package should be imported into MiniApp1 to validate user input
-5.  An example of testing components using Jest
-6.  Show us how you use Typescript
+5.  An example of testing components using Jest ✅
+6.  Show us how you use Typescript 
 
