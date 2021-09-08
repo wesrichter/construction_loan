@@ -1897,7 +1897,7 @@ axobject-query@^2.2.0:
   resolved "https://registry.yarnpkg.com/axobject-query/-/axobject-query-2.2.0.tgz#943d47e10c0b704aa42275e20edf3722648989be"
   integrity sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA==
 
-babel-jest@^27.0.6, babel-jest@^27.1.0:
+babel-jest@^27.1.0:
   version "27.1.0"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-27.1.0.tgz#e96ca04554fd32274439869e2b6d24de9d91bc4e"
   integrity sha512-6NrdqzaYemALGCuR97QkC/FkFIEBWP5pw5TMJoUHZTVXyOgocujp6A0JE2V6gE0HtqAAv6VKU/nI+OCR1Z4gHA==
@@ -4473,6 +4473,11 @@ jest-snapshot@^27.1.0:
     natural-compare "^1.4.0"
     pretty-format "^27.1.0"
     semver "^7.3.2"
+
+jest-svg-transformer@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/jest-svg-transformer/-/jest-svg-transformer-1.0.0.tgz#e38884ca4cd8b2295cdfa2a0b24667920c3a8a6d"
+  integrity sha1-44iEykzYsilc36KgskZnkgw6im0=
 
 jest-util@^27.1.0:
   version "27.1.0"
