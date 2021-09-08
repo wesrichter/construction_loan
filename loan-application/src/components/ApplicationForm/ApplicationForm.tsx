@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Formik, Field, Form, FormikHelpers, ErrorMessage } from 'formik';
+const { Texter, Emailer, Phoner, Numerer } = require('inputter');
 import * as Yup from 'yup';
 
 interface Values {
@@ -51,14 +52,36 @@ const ApplicationForm = () => {
 
     return (
     <Formik
-        validationSchema={ApplicationSchema}
+        validate={ values => {
+            const errors = {}
+
+            const firstName = new Texter(values.firstName)
+            firstName.Min(2).Max(50).Required().OnlyText()
+            firstName.errorMessage ? errors['firstName'] = firstName.errorMessage : null
+
+            const lastName = new Texter(values.lastName)
+            lastName.Min(2).Max(50).Required().OnlyText()
+            lastName.errorMessage ? errors['lastName'] = lastName.errorMessage : null
+
+            const email = new Emailer(values.email)
+            email.Validate().Required()
+            email.errorMessage ? errors['email'] = email.errorMessage : null
+
+            const phone = new Phoner(values.phone)
+            phone.Validate().OnlyNumber().Required()
+            phone.errorMessage ? errors['phone'] = phone.errorMessage : null
+
+            return errors
+            
+        }}
         initialValues={{
             firstName: '',
             lastName: '',
             email: '',
             phone: ''
         }}
-        onSubmit={(values: Values, { setSubmitting }: FormikHelpers<Values>) => {
+        onSubmit={(values, { setSubmitting }) => {
+            console.log('SUBMITTING')
             localStorage.setItem("formFirstName", values.firstName);
             window.location.replace('/success')
             setTimeout(() => {
@@ -71,8 +94,9 @@ const ApplicationForm = () => {
             {
                 fields.map(field => {
                     return (
-                        <div className="fieldInput">
+                        <div key={field.id} className="fieldInput">
                         <Field
+                            key={field.id} 
                             id={field.id} 
                             name={field.name}
                             placeholder={field.placeHolder} 
@@ -86,7 +110,7 @@ const ApplicationForm = () => {
             {
                 selects.map(select => {
                     return (
-                        <Field as="select" name={select.name}>
+                        <Field key={select.id} as="select" name={select.name}>
                            {select.options.map(drop => <option value={drop.value}>{drop.display}</option>)}
                         </Field>
                     )

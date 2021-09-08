@@ -3870,10 +3870,10 @@ inherits@2.0.3:
   resolved "https://registry.npmjs.org/inherits/-/inherits-2.0.3.tgz"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
-inputter@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/inputter/-/inputter-1.0.4.tgz#adb4d0c04defe079af9031efde669bb3e1bbf96d"
-  integrity sha512-p0Q0DfwDS60+9mxbGHbgprsLTLS9XS1BHa9uH6Z7Ev5oKtxY/CqQZ3HGrSFa7ny03kHCQDYOwmf6yHE57yvkoQ==
+inputter@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/inputter/-/inputter-1.0.5.tgz#9c458f6067b126c507ff2baf634d97fac3185909"
+  integrity sha512-RUGb9J03mrHwf7/gQPCJtE03whMnPlS+rpfFdBjfwoiw+4h+kcCmZ9rA4eoXf9kciBYnmDxaD7WhJtO/bzn0yg==
 
 internal-ip@^6.2.0:
   version "6.2.0"
